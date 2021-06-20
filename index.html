@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Lisa Fix</title>
     <link rel="stylesheet" href="statics/css/style.css">
+
+    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body class="main">
     <header class="main__header">
@@ -41,5 +45,136 @@
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="section__content">
+            <div id="grid" class="grid">
+                <div class="grid-sizer"></div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item  grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+                <div class="grid-item grid-item-2">
+                    <img src="https://loremflickr.com/640/360">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        imagesLoaded( document.querySelector('#grid'), function( instance ) {
+
+
+            var grid = document.querySelector('.grid');
+
+            grid.classList.add('grid--loaded');
+
+             new Masonry( grid, {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true,
+            });
+
+            // init with element
+            ScrollReveal().reveal('.grid-item');
+        });
+
+
+    </script>
 </body>
 </html>
