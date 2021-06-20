@@ -1,0 +1,32 @@
+html {
+  font-size: 62.5%;
+  font-family: 'Circular', sans-serif;
+  font-weight: normal;
+  position: relative;
+  min-height: 100%;
+
+  body {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: initial;
+    color: @black;
+  }
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    width: 1280px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 1110px;
+  }
+
+  @media screen and (max-width: 1110px) {
+    width: 980px;
+  }
+}

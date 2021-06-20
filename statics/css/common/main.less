@@ -1,0 +1,25 @@
+.main {
+  background-color: @beige;
+  height: 200rem;
+
+  --container-width: 1440px;
+  --header-height: 9rem;
+  &__header {
+    position:fixed;
+    top:0;
+    width: 100%;
+
+  }
+
+  &__logo {
+    height: 7rem;
+    width: 6rem;
+    background: url('../../img/logo.svg') no-repeat center;
+    background-size: contain;
+    .transition( transform ease 250ms);
+
+    &:hover{
+      .transform(rotate(-10deg) scale(1.1));
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.hero-header {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 0;
+  align-items: center;
+
+  &__img {
+    margin: 0 auto;
+    display: block;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 50rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-family: 'reenie_beanie', sans-serif;
+    color: @blue;
+    margin: 0;
+    font-size: 3rem;
+  }
+
+  &__description {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+  }
+
+  &__text {
+    max-width: 50rem;
+    width: 100%;
+  }
+
+  &__cta {
+    font-size: 2rem;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
