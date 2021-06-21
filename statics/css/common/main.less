@@ -8,17 +8,10 @@
     top:0;
     width: 100%;
     z-index: 1;
-  }
+    background: linear-gradient(180deg, @orange 0%, fadeout(@orange,100%) 100%);
 
-  &__logo {
-    height: 7rem;
-    width: 6rem;
-    background: url('../../img/logo.svg') no-repeat center;
-    background-size: contain;
-    .transition( transform ease 250ms);
-
-    &:hover{
-      .transform(rotate(-10deg) scale(1.1));
+    &--scrolled {
+      background: linear-gradient(180deg, @beige 0%, fadeout(@beige,100%) 100%);
     }
   }
 }

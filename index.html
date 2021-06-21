@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Lisa Fix</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" name="viewport">
     <link rel="stylesheet" href="statics/css/style.css">
     <link type="text/css" rel="stylesheet" href="node_modules/lightgallery/css/lightgallery.css" />
 
@@ -14,9 +16,13 @@
 <body class="main">
     <header class="main__header">
         <nav class="navigation">
-            <a href="#" class="main__logo"></a>
+            <a href="#" class="navigation__logo"></a>
 
-            <ul class="navigation__items">
+            <button type="button" id="nav-toggle" class="navigation__toggle">
+                <span></span>
+            </button>
+
+            <ul class="navigation__items" id="navbar">
                 <li class="navigation__item">
                     <a href="#" class="navigation__link navigation__link--active">Works</a>
                 </li>
@@ -43,55 +49,55 @@
                     Diplômée de l'École Supérieure d'Art & de Design des Pyrénées en 2020, je suis passionnée par la création visuelle et l'illustration.
                 </p>
 
-                <a class="hero-header__cta cta cta--blue" href="#">Contactez moi pour vos projets !</a>
+                <a class="hero-header__cta cta cta--blue" href="#">Contactez-moi pour vos projets !</a>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="section__content">
-            <div id="grid" class="grid">
-                <div class="grid-sizer"></div>
-                <div class="grid-item grid-item-2" data-src="statics/img/gallery/rue_02.png">
+            <div id="gallery" class="gallery">
+                <div class="gallery__sizer"></div>
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/rue_02-min.png">
                     <img src="statics/img/gallery/min/rue_02-min.png">
                 </div>
-                <div class="grid-item  grid-item-2" data-src="statics/img/gallery/Santorini_blanc.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/Santorini_blanc-min.png">
                     <img src="statics/img/gallery/min/Santorini_blanc-min.png">
                 </div>
 
-                <div class="grid-item  grid-item-2" data-src="statics/img/gallery/vin.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/vin-min.jpg">
                     <img src="statics/img/gallery/min/vin-min.png">
                 </div>
 
-                <div class="grid-item" data-src="statics/img/gallery/Olives-jaune.png">
+                <div class="gallery__item" data-src="statics/img/gallery/fullsize/Olives-jaune-min.png">
                     <img src="statics/img/gallery/min/Olives-jaune-min.png">
                 </div>
 
-                <div class="grid-item" data-src="statics/img/gallery/rue_01.png">
+                <div class="gallery__item gallery__item--display" data-src="statics/img/gallery/fullsize/rue_01-min.png">
                     <img src="statics/img/gallery/min/rue_01-min.png">
                 </div>
 
-                <div class="grid-item" data-src="statics/img/gallery/oranges.png">
+                <div class="gallery__item gallery__item--display" data-src="statics/img/gallery/fullsize/oranges-min.png">
                     <img src="statics/img/gallery/min/oranges-min.png">
                 </div>
 
-                <div class="grid-item" data-src="statics/img/gallery/feuilles_bleu.png">
+                <div class="gallery__item" data-src="statics/img/gallery/fullsize/Feuille_bleu-min.png">
                     <img src="statics/img/gallery/min/feuilles_bleu-min.png">
                 </div>
 
-                <div class="grid-item grid-item-2" data-src="statics/img/gallery/velo.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/velo-min.png">
                     <img src="statics/img/gallery/min/velo-min.png">
                 </div>
 
-                <div class="grid-item grid-item-2" data-src="statics/img/gallery/rue_03.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/rue_03-min.png">
                     <img src="statics/img/gallery/min/rue_03-min.png">
                 </div>
 
-                <div class="grid-item grid-item-2" data-src="statics/img/gallery/charadesign.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/charadesign-min.png">
                     <img src="statics/img/gallery/min/charadesign-min.png">
                 </div>
 
-                <div class="grid-item grid-item-2" data-src="statics/img/gallery/bleu_doree.png">
+                <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/fullsize/bleu_doree-min.png">
                     <img src="statics/img/gallery/min/bleu_doree-min.png">
                 </div>
             </div>
@@ -99,25 +105,47 @@
     </section>
 
     <script>
-        imagesLoaded( document.querySelector('#grid'), function( instance ) {
 
 
-            var grid = document.querySelector('.grid');
+        document.addEventListener("scroll", function () {
+            const heroHeader = document.getElementsByClassName('section--hero')[0];
+            const navbar = document.getElementsByTagName("header")[0];
+            var heroHeaderHeight = heroHeader.clientHeight;
+            var scrolled = document.documentElement.scrollTop;
 
-            grid.classList.add('grid--loaded');
+            if (scrolled >= heroHeaderHeight) {
+                navbar.classList.add("main__header--scrolled");
+            } else {
+                navbar.classList.remove("main__header--scrolled");
+            }
+        });
+
+        function toggleMenu() {
+            const navToggle = document.getElementById('nav-toggle');
+
+            navToggle.onclick = function () {
+                this.classList.toggle("navigation__toggle--open");
+                document.getElementById('navbar').classList.toggle("navigation__items--open");
+            };
+        } toggleMenu(); // init function
+
+        imagesLoaded( document.querySelector('#gallery'), function( instance ) {
+            var grid = document.querySelector('.gallery');
+
+            grid.classList.add('gallery--loaded');
 
              new Masonry( grid, {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-sizer',
+                itemSelector: '.gallery__item',
+                columnWidth: '.gallery__sizer',
                 percentPosition: true,
             });
 
             // init with element
-            ScrollReveal().reveal('.grid-item');
+            ScrollReveal().reveal('.gallery__item');
 
-            lightGallery(document.getElementById('grid'), {
+            lightGallery(document.getElementById('gallery'), {
+                selector: '.gallery__item--display',
                 speed: 500,
-                selector: '.grid-item',
             });
         });
     </script>

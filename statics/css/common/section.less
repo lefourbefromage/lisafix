@@ -16,37 +16,10 @@
     background-position: bottom center;
     padding-top: var(--header-height);
     padding-bottom: var(--header-height);
+
+    @media screen and (max-width: 768px) {
+      height: 100vh;
+      background-position: bottom right;
+    }
   }
 }
-
-.grid {
-  width: 100rem;
-  margin: 5rem auto;
-  display: none;
-  opacity: 0;
-
-  &--loaded {
-    display: block;
-    opacity: 1;
-  }
-}
-
-.grid-item,
-.grid-sizer {
-  width: 25%;
-}
-
-.grid-item {
-  margin-bottom: 10px;
-  padding:0 5px;
-
-}
-
-.grid-item img {
-  width:100%;
-  display:block;
-}
-
-.grid-item-2 { width:  50%; }
-.grid-item-3 { width:  75%; }
-.grid-item-4 { width: 100%; }

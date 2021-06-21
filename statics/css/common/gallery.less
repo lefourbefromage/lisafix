@@ -1,0 +1,60 @@
+.gallery {
+  width: 100rem;
+  max-width: 100%;
+  margin: 5rem auto;
+  display: none;
+  opacity: 0;
+
+  &--loaded {
+    display: block;
+    opacity: 1;
+  }
+
+  &__item,
+  &__sizer {
+    width: 25%;
+  }
+
+  &__item {
+    padding: 5px;
+
+    &--display {
+      cursor: pointer;
+
+      &:hover {
+        img {
+          .scale(1.02);
+        }
+      }
+    }
+
+    img {
+      .transition(all ease 250ms);
+      width: 100%;
+      display: block;
+    }
+
+    &--2 {
+      width: 50%;
+    }
+
+    &--3 {
+      width: 75%;
+    }
+
+    &--4 {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1080px) {
+      width: 50%;
+      &--3 {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 50%;
+    }
+  }
+}
