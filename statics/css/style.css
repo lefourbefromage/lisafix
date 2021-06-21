@@ -177,9 +177,11 @@ button {
     transition: all ease 250ms;
     z-index: 1;
     opacity: 0;
+    pointer-events: none;
   }
   .navigation__items--open {
     opacity: 1;
+    pointer-events: initial;
   }
 }
 .navigation__toggle {
