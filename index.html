@@ -110,7 +110,9 @@
         document.addEventListener("scroll", function () {
             const heroHeader = document.getElementsByClassName('section--hero')[0];
             const navbar = document.getElementsByTagName("header")[0];
-            var heroHeaderHeight = heroHeader.clientHeight;
+
+            var navbarHeader = navbar.clientHeight;
+            var heroHeaderHeight = heroHeader.clientHeight - navbarHeader;
             var scrolled = document.documentElement.scrollTop;
 
             if (scrolled >= heroHeaderHeight) {
