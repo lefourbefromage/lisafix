@@ -108,19 +108,7 @@
     }
   }
 
-  &__link {
-    font-family: 'reenie_beanie', sans-serif;
-    font-size: 3.5rem;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
-    &:before {
-      content: '.';
-      order: 2;
-    }
+  .menu-item {
 
     &:after {
       content: '';
@@ -137,10 +125,25 @@
     }
 
     &:hover,
-    &--active {
+    &.current-menu-item {
       &:after {
         opacity: 1;
         top: 0;
+      }
+    }
+
+    a {
+      font-family: 'reenie_beanie', sans-serif;
+      font-size: 3.5rem;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: '.';
+        order: 2;
       }
     }
   }
