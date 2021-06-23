@@ -314,8 +314,6 @@ button {
   width: 100rem;
   max-width: 100%;
   margin: 5rem auto;
-  display: none;
-  opacity: 0;
 }
 .gallery--loaded {
   display: block;

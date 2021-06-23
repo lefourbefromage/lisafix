@@ -17,54 +17,37 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="section__content">
-        <div id="gallery" class="gallery">
-            <div class="gallery__sizer"></div>
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/rue_02-min.png">
-                <img src="statics/img/gallery/min/rue_02-min.png">
-            </div>
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/Santorini_blanc-min.png">
-                <img src="statics/img/gallery/min/Santorini_blanc-min.png">
-            </div>
+<?php if( have_rows('gallery') ): ?>
+    <section class="section">
+        <div class="section__content">
+            <a id="gallery" class="gallery">
+                <div class="gallery__sizer"></div>
 
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/vin-min.jpg">
-                <img src="statics/img/gallery/min/vin-min.png">
-            </div>
+                <?php while( have_rows('gallery') ): the_row();
+                    $image = get_sub_field('image');
+                    $imageurl = $image['url'];
+                    $thumb = $image['sizes']['large'];
+                    $caption = get_sub_field('caption');
+                    $shop = get_sub_field('shop');
 
-            <div class="gallery__item" data-src="statics/img/gallery/big/Olives-jaune-min.png">
-                <img src="statics/img/gallery/min/Olives-jaune-min.png">
-            </div>
+                    $isShown = get_sub_field('is_shown');
+                    $column = get_sub_field('column_width');
 
-            <div class="gallery__item gallery__item--display" data-src="statics/img/gallery/big/rue_01-min.png">
-                <img src="statics/img/gallery/min/rue_01-min.png">
-            </div>
-
-            <div class="gallery__item gallery__item--display" data-src="statics/img/gallery/big/Oranges-min.png">
-                <img src="statics/img/gallery/min/oranges-min.png">
-            </div>
-
-            <div class="gallery__item" data-src="statics/img/gallery/big/Feuille_bleu-min.png">
-                <img src="statics/img/gallery/min/feuilles_bleu-min.png">
-            </div>
-
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/velo-min.png">
-                <img src="statics/img/gallery/min/velo-min.png">
-            </div>
-
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/rue_03-min.png">
-                <img src="statics/img/gallery/min/rue_03-min.png">
-            </div>
-
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/charadesign-min.png">
-                <img src="statics/img/gallery/min/charadesign-min.png">
-            </div>
-
-            <div class="gallery__item gallery__item--display gallery__item--2" data-src="statics/img/gallery/big/bleu_doree-min.png">
-                <img src="statics/img/gallery/min/bleu_doree-min.png">
+                    ?>
+                    <div class="gallery__item <?php if ($isShown):?>gallery__item--display<?php endif;?> gallery__item--<?php echo $column;?>"
+                         data-src="<?php echo $imageurl;?>"
+                         data-sub-html="
+                         <?php if ($shop): ?>
+                            <a target='_blank' href='<?php echo $shop;?>'><?php echo $caption;?></a>
+                         <?php else :?>
+                            <?php echo $caption;?>
+                         <?php endif;?>">
+                        <img src="<?php echo $thumb; ?>">
+                    </div>
+                <?php endwhile; ?>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 
 <?php get_footer();?>
