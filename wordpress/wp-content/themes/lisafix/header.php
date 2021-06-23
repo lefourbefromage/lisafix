@@ -12,7 +12,7 @@
 <body class="main">
 <header class="main__header">
     <nav class="navigation">
-        <a href="#" class="navigation__logo"></a>
+        <a href="<?php echo home_url();?>" class="navigation__logo"></a>
 
         <button type="button" id="nav-toggle" class="navigation__toggle">
             <span></span>

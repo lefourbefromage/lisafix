@@ -23,6 +23,20 @@
     }
   }
 
+  &--hero-about {
+    background-image: url('../../img/background-about.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding-top: var(--header-height);
+    padding-bottom: var(--header-height);
+    height: 100vh;
+
+    @media screen and (max-width: 768px) {
+      background-position: bottom right;
+    }
+  }
+
 
   &--contact {
     &:before {

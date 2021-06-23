@@ -1,0 +1,133 @@
+.hero-about {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  width: 100rem;
+  max-width: 100%;
+
+  &__img {
+    margin: 0 auto;
+    display: block;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 40rem;
+  }
+
+  &__title {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    font-family: 'reenie_beanie', sans-serif;
+    color: @blue;
+    margin: 0;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  &__description {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 2rem 0;
+  }
+}
+
+.about {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 100%;
+  min-height: 75vh;
+
+  &__media {
+    margin: 0 auto;
+    display: block;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 50rem;
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 120%;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__texts {
+    display: grid;
+    row-gap: 3rem;
+  }
+
+  &__title {
+    font-family: 'reenie_beanie', sans-serif;
+    color: @blue;
+    margin: 0;
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: normal;
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0;
+  }
+}
+
+.contact-me {
+  margin-top: 4rem;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 100%;
+  background-image: url('../../img/background-blue.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+
+  &__img {
+    margin: 0 auto;
+    display: block;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 50rem;
+  }
+
+  &__title {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  &__cta {
+
+    font-size: 2rem;
+    font-weight: normal;
+    display: inline-block;
+
+    @media screen and (max-width: 768px) {
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+    }
+  }
+}
