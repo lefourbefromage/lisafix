@@ -1,3 +1,11 @@
+/*
+Theme Name: LisaFix.
+Theme URI: lisafix.fr
+Description: Lisa Fix Website Theme
+Version: 1.0
+Author: Vincent Waldmann
+Author URI: vincentw.fr
+*/
 @font-face {
   font-family: 'reenie_beanie';
   src: url('./fonts/ReenieBeanie/reeniebeanie-regular-webfont.woff2') format('woff2'), url('./fonts/ReenieBeanie/reeniebeanie-regular-webfont.woff') format('woff');
@@ -405,6 +413,12 @@ button {
   font-size: 2rem;
   font-weight: normal;
   display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .hero-header__cta {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .hero-header {
