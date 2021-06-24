@@ -10,7 +10,7 @@ imagesLoaded( document.querySelector('#gallery'), function( instance ) {
     });
 
     // init with element
-    // ScrollReveal().reveal('.gallery__item');
+    ScrollReveal().reveal('.gallery__item');
 
     lightGallery(document.getElementById('gallery'), {
         selector: '.gallery__item--display',

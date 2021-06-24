@@ -30,13 +30,15 @@
     background-position: bottom center;
     padding-top: var(--header-height);
     padding-bottom: var(--header-height);
-    height: 100vh;
+    min-height: 75vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 
     @media screen and (max-width: 768px) {
-      background-position: bottom right;
+      background-position: top left;
     }
   }
-
 
   &--contact {
     &:before {
@@ -52,4 +54,5 @@
       height: 50vh;
     }
   }
+
 }

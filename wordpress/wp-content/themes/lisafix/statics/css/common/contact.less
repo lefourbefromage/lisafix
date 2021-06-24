@@ -24,6 +24,7 @@
     padding: 3rem;
     border-radius: 1rem;
     width: 80rem;
+    max-width: 100%;
     margin: 5rem auto;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.20);
   }
@@ -35,14 +36,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    grid-template:
-        "a b"
-        "c c"
-        "d d";
+
+    @media screen and (max-width: 768px){
+      grid-template-columns: 1fr;
+    }
   }
 
   .gfield {
     width: 100%;
+
+    &--object,
+    &--text {
+      grid-column: 1/ -1;
+    }
   }
 
   .gfield_label {
@@ -62,40 +68,26 @@
     display: none;
   }
 
-  .ginput_container input, .ginput_container textarea {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid #d4d4d4;
-    margin-top: 1rem;
-    outline: none;
+  .ginput_container {
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #d4d4d4;
+      margin-top: 1rem;
+      outline: none;
 
-    &:focus {
-      border: 1px solid @blue;
+      &:focus {
+        border: 1px solid @blue;
+      }
     }
-  }
 
-
-  #field_1_1 {
-    grid-area: a;
-  }
-
-  li#field_1_2 {
-    grid-area: b;
-  }
-
-  li#field_1_3 {
-    grid-area: c;
-  }
-
-  li#field_1_4 {
-    grid-area: d;
-  }
-
-  .ginput_container textarea {
-    background: #f3f3f3;
-    border: none;
+    textarea {
+      background: #f3f3f3;
+      border: none;
+    }
   }
 
   .gform_button {
@@ -111,6 +103,19 @@
     cursor: pointer;
   }
 
+  .validation_error {
+    color: @red;
+    background: fadeout(@red,80%);
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .validation_message{
+    color:@red;
+    margin-top: .5rem;
+  }
 }
 
 

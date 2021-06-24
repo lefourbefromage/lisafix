@@ -16,6 +16,19 @@ add_action('wp_enqueue_scripts', 'load_head');
 
 // Load Scripts
 
+
+function load_script() {
+    wp_register_script('scrollReveal', 'https://unpkg.com/scrollreveal', '', '', 1);
+    wp_enqueue_script('scrollReveal');
+
+    wp_register_script('custom', get_template_directory_uri() . '/statics/js/custom.js', '', '', 1);
+    wp_enqueue_script('custom');
+
+    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', '','',1);
+    wp_enqueue_script('jquery');
+
+} add_action( 'wp_enqueue_scripts', 'load_script' );
+
 function gallery() {
     if( is_page( array( 'home') ) ){
 
@@ -39,14 +52,7 @@ function gallery() {
 
 
 
-function load_script() {
-    wp_register_script('custom', get_template_directory_uri() . '/statics/js/custom.js', '', '', 1);
-    wp_enqueue_script('custom');
 
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', '','',1);
-    wp_enqueue_script('jquery');
-
-} add_action( 'wp_enqueue_scripts', 'load_script' );
 
 // Create Menu
 add_theme_support('menus');

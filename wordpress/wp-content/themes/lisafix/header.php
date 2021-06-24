@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lisa Fix</title>
+    <title>LisaFix.fr | Graphiste & Illustratrice</title>
     <meta name="theme-color" content="#e4a83a">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory');?>/statics/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory');?>/statics/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory');?>/statics/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo('template_directory');?>/statics/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?php bloginfo('template_directory');?>/statics/img/favicon/safari-pinned-tab.svg" color="#2a6ce2">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+
 
     <?php wp_head();?>
 </head>
